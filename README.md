@@ -3,7 +3,7 @@ This repo is a clone of the folder Wokwi you find in the VM provided in the IoT 
 
 These folders contain examples from the first lecture on wokwi and esp32.
 
-To compile and run the following projects, use the compile.sh script you find in Wokwi folder.
+To compile and run the following projects, use the compile.sh script you find in Wokwi folder for VS Code support, or just open the Brave browser
 
 For those of you brave enough, here are the installation instructions.
 
