@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "Antonio Boiano",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -110.32, "left": -11.3, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -95.77,
+      "left": -89.92,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -15.81,
+      "left": -93.96,
+      "rotate": 90,
+      "attrs": { "value": "00" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led1:A", "r1:1", "red", [ "v0" ] ],
+    [ "r1:2", "esp:D12", "red", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
