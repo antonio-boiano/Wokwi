@@ -11,7 +11,7 @@ if [ ! -d "$USERINPUT_FOLDER" ]; then
 fi
 
 # Activate PlatformIO virtual environment
-source /home/iotpolimi/.platformio/penv/bin/activate
+source ~/.platformio/penv/bin/activate
 
 # Change to the specified directory
 cd "$USERINPUT_FOLDER" || exit
