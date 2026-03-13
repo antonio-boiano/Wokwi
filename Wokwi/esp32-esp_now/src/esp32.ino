@@ -2,18 +2,18 @@
 #include <esp_now.h>
 
 // MAC receiver
-uint8_t broadcastAddress[] = {0x8C, 0xAA, 0xB5, 0x84, 0xFB, 0x90};
+uint8_t broadcastAddress[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
 esp_now_peer_info_t peerInfo;
 
 // Sending callback
-void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
+void OnDataSent(const wifi_tx_info_t *mac_addr, esp_now_send_status_t status) {
   Serial.print("Send Status: ");
   Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Ok" : "Error");
 }
 
 //Receiving Callback
-void OnDataRecv(const uint8_t * mac, const uint8_t *data, int len) {
+void OnDataRecv(const esp_now_recv_info_t * mac, const uint8_t *data, int len) {
   Serial.print("Message received: ");
   char receivedString[len];
   memcpy(receivedString, data, len);
@@ -49,7 +49,6 @@ void loop() {
 */
   esp_now_send(broadcastAddress, (uint8_t*)message.c_str(), message.length() + 1);
 }
-
 
 
 
